@@ -1,16 +1,19 @@
 ## Welcome to INF226
 
-[Subject link](www.uib.no/emne/INF226)
+[UiB: Subject link](www.uib.no/emne/INF226)
 
 ## Mandatory 1
 
-You will need a Linux system.
-macOs will not work as the binaries for the assignment is compiled for linux.
+### Setup
 
-But installing linux in a Virtual Machine will work.
+You will need a Linux system.
+macOs will not work as the binaries for the assignment is compiled for Linux.
+
+But installing Linux in a Virtual Machine will work.
+Choose your distro.
 Windows users have the option of installing WSL2 (described under) or use a VM.
 
-## Windows Subsystem for Linux
+### Windows Subsystem for Linux
 
 If you have a Windows 10 Machine and don't wanna run a linux distro in a Virtual Machine.
 
@@ -28,9 +31,12 @@ When you have installed WSL you can access the Windows Subsystem for Linux this 
 PS> wsl
 ```
 
-## PwnTools
+## Tools
+
+### PwnTools
 
 [PwnTools Installation Instructions](http://docs.pwntools.com/en/latest/install.html)
+
 [PwnTools Documentation](http://docs.pwntools.com/en/stable/intro.html)
 
 Is installed on Linux or in WSL2 the following way from the terminal.
@@ -42,9 +48,28 @@ $> python3 -m pip install --upgrade pip
 $> python3 -m pip install --upgrade pwntools
 ```
 
-## Tools
+### gdb
 
-gdb
+Installing if it is not already there.
 
+```sh
+$ sudo apt-get update
+$ sudo apt-get install gdb
+```
+
+Usefull commands
+```sh
+info func # list all functions
+run # runs main
+step # step through
+break *address # set a breakpoint
+```
+
+[GDB Manual](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
+
+
+
+
+### Other fansy and maybe usefull resources
 
 [Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
