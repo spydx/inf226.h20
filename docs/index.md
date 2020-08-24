@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+## Welcome to INF226
 
-You can use the [editor on GitHub](https://github.com/spydx/inf226.h20/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+[Subject link](www.uib.no/emne/INF226)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Mandatory 1
 
-### Markdown
+You will need a Linux system.
+macOs will not work as the binaries for the assignment is compiled for linux.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+But installing linux in a Virtual Machine will work.
+Windows users have the option of installing WSL2 (described under) or use a VM.
 
-```markdown
-Syntax highlighted code block
+## Windows Subsystem for Linux
 
-# Header 1
-## Header 2
-### Header 3
+If you have a Windows 10 Machine and don't wanna run a linux distro in a Virtual Machine.
 
-- Bulleted
-- List
+It has been tested and verified that pwntools work on WSL2 w/Ubutntu installation.
 
-1. Numbered
-2. List
+[Windows Subsystem for Linux Install Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
-**Bold** and _Italic_ and `Code` text
+Important that you follow all the instructions in this quide if you wanna install WSL2.
 
-[Link](url) and ![Image](src)
+[Updating the WSL2 2 Linux kernel](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel)
+
+When you have installed WSL you can access the Windows Subsystem for Linux this way:
+
+```cmd
+PS> wsl
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## PwnTools
 
-### Jekyll Themes
+[PwnTools Installation Instructions](http://docs.pwntools.com/en/latest/install.html)
+[PwnTools Documentation](http://docs.pwntools.com/en/stable/intro.html)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/spydx/inf226.h20/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Is installed on Linux or in WSL2 the following way from the terminal.
 
-### Support or Contact
+```sh
+$> sudo apt-get update
+$> sudo apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential
+$> python3 -m pip install --upgrade pip
+$> python3 -m pip install --upgrade pwntools
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Tools
+
+gdb
+
+
+[Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
