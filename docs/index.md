@@ -33,6 +33,28 @@ PS> wsl
 
 ## Tools
 
+Listed from the slides
+
+* gcc - A C compiler
+* gdb - A debugger
+* objdump -d - A dissasembler
+* xxd - converting between hex and bytes
+* strace - Make a log of the systemcalls made by the process
+
+### binutils
+
+Some places it is mentioned that you need to install binutils.
+If your distrubution doesn't have that, this means that gdb, gcc, objdump is not preinstalled. Some Linux distros come without, my Ubuntu install they are preinstalled.
+
+To install binutils:
+```sh
+>sudo apt-cache update
+>sudo apt-get install binutils
+```
+
+Information about common tools in bin utils
+[Binutils](https://www.gnu.org/software/binutils/binutils.html)
+
 ### PwnTools
 
 [PwnTools Installation Instructions](http://docs.pwntools.com/en/latest/install.html)
@@ -68,7 +90,17 @@ break *address # set a breakpoint
 [GDB Manual](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
 
 
+### xxd
 
+[xxd manual](http://manpages.ubuntu.com/manpages/precise/man1/xxd.1.html)
+
+### objdump
+
+Create a dissasembly output of the program
+
+```sh
+objdump -d > file.txt
+```
 
 ### Other fansy and maybe usefull resources
 
