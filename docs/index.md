@@ -68,6 +68,15 @@ $> python3 -m pip install --upgrade pip
 $> python3 -m pip install --upgrade pwntools
 ```
 
+If you get import problems with pwntools, please verify that you are using python3 when you run the script.
+
+```sh
+> python --version # should be version 3
+```
+
+If python is 2.x use python3 cmd instead.
+
+If you have linting problems in VSCode, check that you are using the correct interperator in python. 
 ### gdb
 
 Installing if it is not already there.
@@ -101,6 +110,7 @@ objdump -d > file.txt
 ```
 
 ### Other fansy and maybe usefull resources
+[Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
 
 [Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
 
