@@ -76,7 +76,27 @@ If you get import problems with pwntools, please verify that you are using pytho
 
 If python is 2.x use python3 cmd instead.
 
-If you have linting problems in VSCode, check that you are using the correct interperator in python. 
+If you have linting problems in VSCode, check that you are using the correct interperator in python.
+
+#### macOS
+
+You will not be able to use gdb or similar tools to run the binaries on macOS
+
+You can install pwntools on macOS either throug [Homebrew](https://brew.sh/)
+
+```sh
+> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+> brew install pwntools
+```
+
+or just install the library:
+
+```sh
+> python3 -m pip install --upgrade pwntools
+```
+
+This will help you atleast to write the script and run the attack from your mac instead of inside the virtual machine :) 
+
 ### gdb
 
 Installing if it is not already there.
