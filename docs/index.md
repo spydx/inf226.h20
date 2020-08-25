@@ -1,6 +1,4 @@
-## Welcome to INF226
-
-[UiB: Subject link](www.uib.no/emne/INF226)
+# INF226 Support Material
 
 ## Mandatory 1
 
