@@ -57,6 +57,8 @@ Information about common tools in bin utils
 
 [PwnTools Installation Instructions](http://docs.pwntools.com/en/latest/install.html)
 
+[PwnTools Readme (Github)](https://github.com/Gallopsled/pwntools-tutorial#readme)
+
 [PwnTools Documentation](http://docs.pwntools.com/en/stable/intro.html)
 
 Is installed on Linux or in WSL2 the following way from the terminal.
