@@ -102,4 +102,6 @@ objdump -d > file.txt
 
 ### Other fansy and maybe usefull resources
 
+[Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
+
 [Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
