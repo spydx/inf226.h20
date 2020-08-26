@@ -80,6 +80,14 @@ If python is 2.x use python3 cmd instead.
 
 If you have linting problems in VSCode, check that you are using the correct interperator in python.
 
+#### Debugging trick
+
+```python
+from pwn import *
+p = gdb.debug(<binary_name_as_string>, <gdb_commands_to_exec_automatically_as_string>)
+```
+[PwnTool: GDB](https://docs.pwntools.com/en/stable/gdb.html)
+
 #### macOS
 
 You will not be able to use gdb or similar tools to run the binaries on macOS
