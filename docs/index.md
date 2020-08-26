@@ -97,7 +97,7 @@ or just install the library:
 > python3 -m pip install --upgrade pwntools
 ```
 
-This will help you atleast to write the script and run the attack from your mac instead of inside the virtual machine :) 
+This will help you atleast to write the script and run the attack from your mac instead of inside the virtual machine :)
 
 ### gdb
 
@@ -117,6 +117,32 @@ break *address # set a breakpoint
 ```
 
 [GDB Manual](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
+
+[GDB breakpoints](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html#SEC29)
+
+Setting breakpoints on of the options
+
+```sh
+gdb > br *<addr>
+gdb > br symbol
+```
+
+Common issue is missing execute rights on the binary.
+```sh
+> ./<filename>
+Error Access denied
+>
+```
+
+Check for +x and solve it this way.
+
+```sh
+> ls -la <filename>
+-rw-rw--- <filename> #verified that is its missing +x
+> chmod +x <filename>
+> ls -la <filename>
+-rw-rw---x <filename> # now you should be able to run it
+```
 
 
 ### xxd
