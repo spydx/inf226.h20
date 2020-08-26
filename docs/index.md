@@ -86,7 +86,7 @@ If you have linting problems in VSCode, check that you are using the correct int
 from pwn import *
 p = gdb.debug(<binary_name_as_string>, <gdb_commands_to_exec_automatically_as_string>)
 ```
-[PwnTool: GDB](https://docs.pwntools.com/en/stable/gdb.html)
+[PwnTools: GDB](https://docs.pwntools.com/en/stable/gdb.html)
 
 #### macOS
 
@@ -164,6 +164,11 @@ Create a dissasembly output of the program
 ```sh
 objdump -d > file.txt
 ```
+### checksec
+
+checksec is used to check what security settings are available.
+
+[GitHub for checksec](https://github.com/slimm609/checksec.sh)
 
 ### Other fansy and maybe usefull resources
 [Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
