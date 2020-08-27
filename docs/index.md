@@ -28,6 +28,26 @@ When you have installed WSL you can access the Windows Subsystem for Linux this 
 ```cmd
 PS> wsl
 ```
+### macOS
+
+There is a solution to run linux tools, binaries and pwntools through Docker on macOs. (no need for VM)
+
+[Download Docker for macOS](https://www.docker.com/products/docker-desktop)
+
+[Install and run (first time)](https://hub.docker.com/repository/docker/spydx/inf226)
+
+```sh
+docker pull spydx/inf226:latest
+docker run -v /:/mnt -w /mnt/$(pwd) -it --name inf226 inf226/pwntools
+```
+
+To run after first time
+```sh
+docker start -i inf226
+```
+
+There are probalbly many limitations to this or issues, but I managed to run, and use GDB to analyse binaries this way.
+
 
 ## Tools
 
