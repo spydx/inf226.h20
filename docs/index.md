@@ -53,13 +53,13 @@ There are probalbly many limitations to this or issues, but I managed to run, an
 
 Listed from the slides
 
-* gcc - A C compiler
-* gdb - A debugger
-* objdump -d - A dissasembler
-* xxd - converting between hex and bytes
-* strace - Make a log of the systemcalls made by the process
+* `gcc` - A C compiler
+* `gdb` - A debugger
+* `objdump -d` - A dissasembler
+* `xxd` - converting between hex and bytes
+* `strace` - Make a log of the systemcalls made by the process
 
-### binutils
+### `binutils`
 
 Some places it is mentioned that you need to install binutils.
 If your distrubution doesn't have that, this means that gdb, gcc, objdump is not preinstalled. Some Linux distros come without, my Ubuntu install they are preinstalled.
@@ -90,13 +90,13 @@ $> python3 -m pip install --upgrade pip
 $> python3 -m pip install --upgrade pwntools
 ```
 
-If you get import problems with pwntools, please verify that you are using python3 when you run the script.
+If you get import problems with `pwntools`, please verify that you are using `python3` when you run the script.
 
 ```sh
 > python --version # should be version 3
 ```
 
-If python is 2.x use python3 cmd instead.
+If `python` is 2.x use `python3` cmd instead.
 
 If you have linting problems in VSCode, check that you are using the correct interperator in python.
 
@@ -127,7 +127,7 @@ or just install the library:
 
 This will help you atleast to write the script and run the attack from your mac instead of inside the virtual machine :)
 
-### gdb
+### `gdb`
 
 Installing if it is not already there.
 
@@ -136,7 +136,7 @@ $ sudo apt-get update
 $ sudo apt-get install gdb
 ```
 
-Usefull commands
+#### Useful commands
 ```sh
 info func # list all functions
 run # runs main
@@ -162,7 +162,7 @@ Error Access denied
 >
 ```
 
-Check for +x and solve it this way.
+Check for `+x` and solve it this way.
 
 ```sh
 > ls -la <filename>
@@ -173,29 +173,29 @@ Check for +x and solve it this way.
 ```
 
 
-### xxd
+### `xxd`
 
 [xxd manual](http://manpages.ubuntu.com/manpages/precise/man1/xxd.1.html)
 
-### objdump
+### `objdump`
 
 Create a dissasembly output of the program
 
 ```sh
 objdump -d > file.txt
 ```
-### checksec
+### `checksec`
 
-checksec is used to check what security settings are available.
+`checksec` is used to check what security settings are available.
 
-[GitHub for checksec](https://github.com/slimm609/checksec.sh)
+[GitHub for `checksec`](https://github.com/slimm609/checksec.sh)
 
-### Other fansy and maybe usefull resources
+### Other fancy and maybe useful resources
 
-[Buffer Overflows](https://ctf101.org/binary-exploitation/buffer-overflow/)
+- [Buffer Overflows](https://ctf101.org/binary-exploitation/buffer-overflow/)
 
-[Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
+- [Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
 
-[Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
+- [Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
 
-[Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
+- [Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
