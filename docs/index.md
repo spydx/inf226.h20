@@ -100,6 +100,34 @@ If `python` is 2.x use `python3` cmd instead.
 
 If you have linting problems in VSCode, check that you are using the correct interperator in python.
 
+
+```python
+from pwn import *
+# Open the program with a gdb wrapper
+# Here you can add a second argument that is a string and containing gdb
+# commands you want to run in the gdb interpreter.
+# Once the window has opened, you can simply type "c" for "continue" to
+# continue executing. You can do your gdb stuff in the new window.
+p = gdb.debug('./1')
+# To open a process instead uncomment this and comment above initialization of
+# p:
+# p = process('./1')
+# To connect to the remote instead, uncomment this and comment above
+# initialization of p:
+# p = remote('oblig1.softwaresecurity.no', 9001)
+# Send some line of input to the process
+p.sendline(b'Someinput')
+# Read from the process until "get past me" is displayed
+print(p.recvuntil(b'get past me'))
+# Use interactive to interact manually with the program again
+p.interactive()
+# Close the process at the end
+p.close()
+```
+
+For people working in WSL, you might want to first run the `tmux` command and run your script within it.
+You'll ned to add `context.terminal = ["tmux", "splitw", "-h"]` before you initialize p.
+
 #### Debugging trick
 
 ```python
@@ -144,6 +172,7 @@ step # step through
 break *address # set a breakpoint
 ```
 
+[CFT101 Guide for GDB](https://ctf101.org/reverse-engineering/what-is-gdb/)
 [GDB Manual](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
 
 [GDB breakpoints](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html#SEC29)
@@ -191,6 +220,9 @@ objdump -d > file.txt
 [GitHub for `checksec`](https://github.com/slimm609/checksec.sh)
 
 ### Other fancy and maybe useful resources
+- [CTF Intro to C](https://ctf101.org/reverse-engineering/what-is-c/)
+
+- [CTF Binary Exploitation](https://ctf101.org/binary-exploitation/overview/)
 
 - [Buffer Overflows](https://ctf101.org/binary-exploitation/buffer-overflow/)
 
