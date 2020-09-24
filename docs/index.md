@@ -26,3 +26,7 @@ Note: needs to be installed in the project: [argon2 install](https://github.com/
 [CWE 352](https://cwe.mitre.org/data/definitions/352.html)
 
 ### Access control
+
+### Misc / Articles
+
+[Using HTTP Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
