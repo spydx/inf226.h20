@@ -4,6 +4,14 @@
 
 ## Mandatory 2 :inChat
 
+**NOTE:** (From the [README](https://git.app.uib.no/Hakon.Gylterud/inf226-2020-inchat/)):
+
+```
+A note about HTTPS: We assume that inChat will be running
+behind a reverse proxy which takes care of HTTPS, so you
+can ignore issues related HTTPS.
+```
+
 ### Authentication
 
 [Key Derivation Functions](https://cryptobook.nakov.com/mac-and-key-derivation/kdf-deriving-key-from-password)
