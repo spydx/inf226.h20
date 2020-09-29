@@ -12,6 +12,26 @@ behind a reverse proxy which takes care of HTTPS, so you
 can ignore issues related HTTPS.
 ```
 
+### Setting up and building
+
+```sh
+> mvn compile
+> mvn test
+> mvn exec:java
+```
+
+Be sure to have updated Java Development Kit (JDK) and Maven installed
+
+[Oracle Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html#javasejdk)
+
+[Apache Maven](https://maven.apache.org/install.html)
+
+#### Common problems
+
+[Invalid target release](https://dzone.com/articles/how-to-fix-invalid-target-release-17-18-19-or-110)
+
+[No compiler is prodived](http://roufid.com/no-compiler-is-provided-in-this-environment/)
+
 ### Authentication
 
 [Key Derivation Functions](https://cryptobook.nakov.com/mac-and-key-derivation/kdf-deriving-key-from-password)
