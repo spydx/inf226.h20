@@ -49,6 +49,10 @@ Note: needs to be installed in the project: [argon2 install](https://github.com/
 
 [OWASP XSS Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 
+[OWASP Encoder](https://owasp.org/www-project-java-encoder/)
+
+Examples of use, se the `How to`
+
 ### Cross-Site Request Forgery (CSRF)
 
 [CWE 352](https://cwe.mitre.org/data/definitions/352.html)
