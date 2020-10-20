@@ -1,64 +1,155 @@
 # INF226 Support Material
 
 [Mandatory 1](mandatory1.md)
+[Mandatory 2](mandatory2.md)
 
-## Mandatory 2 :inChat
+## Mandatory 3 : Analyzing the software
 
-**NOTE:** (From the [README](https://git.app.uib.no/Hakon.Gylterud/inf226-2020-inchat/)):
+## TL;DR
 
-```
-A note about HTTPS: We assume that inChat will be running
-behind a reverse proxy which takes care of HTTPS, so you
-can ignore issues related HTTPS.
-```
+Install [Docker](https://www.docker.com/products/docker-desktop)
+Use the [docker-compose](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1) file
+Create a project in SonarQube
+Analyse
+Use [SonarLint](https://www.sonarlint.org/)
 
-### Setting up and building
+
+### Docker Setup
+
+The easiest way to deal with this is to install Docker on your computer.
+
+[Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+You may have to create an account to use Docker.
+
+[Short 100 seconds introduction to Docker](https://www.youtube.com/watch?v=Gjnup-PuquQ)
+
+There are many ways of using Docker so it's easy to get lost in what is happening.
+
+## How to use Docker-Compose
+
+Håkon has supplied a `docker-compose.yml` file at [MittUiB](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1)
+
+When you download this file and place it in a folder.
+You have to start __sonarqube__ from this folder everytime.
+
+With `docker-compose` we use the command `docker-compose up` to start the service.
+
+PS: docker-compose.yml has to be in the same directory you are running docker-compose command from.
+
+__Example__:
 
 ```sh
-> mvn compile
-> mvn test
-> mvn exec:java
+kenneth@kefo ~/inf226.h20/docker-example > ls
+docker-compose.yml // this file has to be in the directory 
+kenneth@kefo ~/inf226.h20/docker-example > docker-compose up
+.... lots of text ...
+sonarqube_1  | 2020.10.20 09:09:50 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up
+// pressing CTRL-C will stop it.
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping docker-example_sonarqube_1 ... done
+Stopping docker-example_db_1        ... done
+
+kenneth@kefo ~/inf226.h20/docker-example >
 ```
 
-Be sure to have updated Java Development Kit (JDK) and Maven installed
+You can also `-d` option on `docker-compose`.
 
-[Oracle Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html#javasejdk)
+Here is to start and stop using `docker-compose -d`
 
-[Apache Maven](https://maven.apache.org/install.html)
+```sh
+kenneth@kefo ~/inf226.h20/docker-example > docker-compose up -d
+Starting docker-example_db_1 ... done
+Starting docker-example_sonarqube_1 ... done
 
-#### Common problems
+kenneth@kefo ~/inf226.h20/docker-example > docker-compose down
+Stopping docker-example_sonarqube_1 ... done
+Stopping docker-example_db_1        ... done
+Removing docker-example_sonarqube_1 ... done
+Removing docker-example_db_1        ... done
+Removing network docker-example_default
+kenneth@kefo ~/inf226.h20/docker-example > 
+```
 
-[Invalid target release](https://dzone.com/articles/how-to-fix-invalid-target-release-17-18-19-or-110)
+You are now ready to use SonarQube
 
-[No compiler is prodived](http://roufid.com/no-compiler-is-provided-in-this-environment/)
 
-### Authentication
+### Using Docker Hub
 
-[Key Derivation Functions](https://cryptobook.nakov.com/mac-and-key-derivation/kdf-deriving-key-from-password)
+This is more complicated to setup, but is my preferred way of doing things.
 
-[scrypt](https://cryptobook.nakov.com/mac-and-key-derivation/scrypt)
-Note: scrypt is already installed in the project.
+#### Fetching the SonarQube image
 
-[Aregon2](https://cryptobook.nakov.com/mac-and-key-derivation/argon2)
+```sh
+kenneth@kefo ~/inf226.h20 > docker pull sonarqube
+Using default tag: latest
+latest: Pulling from library/sonarqube
+cbdbe7a5bc2a: Pull complete 
+ad75d47265c8: Pull complete 
+43f3acb0c861: Pull complete 
+bfe61efc35b0: Pull complete 
+cc57849e5ff2: Pull complete 
+Digest: sha256:10bb6f658a4a716733b6226a165897237fd031d8b02e6f7eddc639125eb8607e
+Status: Downloaded newer image for sonarqube:latest
+docker.io/library/sonarqube:latest
+kenneth@kefo ~/inf226.h20 >
+```
 
-Note: needs to be installed in the project: [argon2 install](https://github.com/phxql/argon2-jvm)
+#### Installing the container
 
-### SQL injection
+This part is only done once, you will get error messages if you do it several times.
 
-### Cross-site scripting (XSS)
+`--name` is something we give it, I've named mine *sonarqube-inf226*, you can name yours anything.
 
-[OWASP XSS Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+```
+docker run -d --name sonarqube-inf226 -p 9000:9000 sonarqube:latest
+```
+When this command is done, the service is already running.
+You can then check it with `docker ps`.
 
-[OWASP Encoder](https://owasp.org/www-project-java-encoder/)
+After this use the routines described in the next section.
 
-Examples of use, se the `How to`
+#### Starting, stopping, status on the SonarQube container
 
-### Cross-Site Request Forgery (CSRF)
+We can now start and stop with the following commands:
 
-[CWE 352](https://cwe.mitre.org/data/definitions/352.html)
+`docker start nameyougaveit` to start sonarqube
+`docker ps` to check what is running on the system
+`docker stop nameyougaveit` to stop sonarqube
 
-### Access control
+__Example__:
+```docker
+kenneth@kefo ~/inf226.h20 > docker start sonarqube-inf226 
+sonarqube-inf226
 
-### Misc / Articles
+kenneth@kefo ~/inf226.h20 > docker ps  
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+7463e290d232        sonarqube:latest    "bin/run.sh bin/sona…"   3 minutes ago       Up 7 seconds        0.0.0.0:9000->9000/tcp   sonarqube-inf226
 
-[Using HTTP Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+kenneth@kefo  ~/inf226.h20 > docker stop sonarqube-inf226 
+sonarqube-inf226
+
+kenneth@kefo ~/inf226.h20 >
+```
+
+#### Troubleshooting
+
+`docker rm sonarqube-inf226` will remove the container that we created for this.
+
+### SonarQube
+
+When you have SonarQube up, you can login using the following details:
+
+Now you can open your browser and log in to SonarQube at [http://localhost:9000](http://localhost:9000)
+
+Username: admin
+Password: admin
+
+[Setting up the project guide](sonarquide.md)
+
+#### Resources
+
+[SonarLint](https://www.sonarlint.org/)
+[Docker Hub SonarQube](https://hub.docker.com/_/sonarqube/)
+[Docker Compose](https://docs.docker.com/compose/)
