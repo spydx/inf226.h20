@@ -156,6 +156,6 @@ Now you can open your browser and log in to SonarQube at [http://localhost:9000]
 
 #### Resources
 
-[SonarLint](https://www.sonarlint.org/)
-[Docker Hub SonarQube](https://hub.docker.com/_/sonarqube/)
-[Docker Compose](https://docs.docker.com/compose/)
+* [SonarLint](https://www.sonarlint.org/)
+* [Docker Hub SonarQube](https://hub.docker.com/_/sonarqube/)
+* [Docker Compose](https://docs.docker.com/compose/)
