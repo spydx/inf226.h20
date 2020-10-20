@@ -29,9 +29,11 @@ Project Key is the groupId and artifactId together.
 ### 3.Token
 
 Key name is not important, it is to identity who, so you can revoke it later in bigger projects.
-Take good care of your key:
+Take good care of your key, and don't share it in a quide like this.
 
-5f04c52cc49f131794bf0c4f33c74f6d7b902628
+Should look similar to this:
+
+`5f04c52cc49f131794bf0c4f33c74f6d7b902628`
 
 Generate the key
 
@@ -42,8 +44,8 @@ Generate the key
 ![Run Analysis](img/4analyze.png)
 
 Copy the command and run it in the root of your project.
-
-![Run Commandline Analysis](img/5cmd.png)
+![Run Commandline Analysis](img/5cmd1.png)
+![Run Commandline Analysis](img/5cmd2.png)
 
 This command can be run several times, as you progress through the project.
 

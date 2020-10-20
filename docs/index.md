@@ -12,6 +12,7 @@
 * Create a project in SonarQube
 * Analyse
 * Use [SonarLint](https://www.sonarlint.org/)
+* [Setting up the project guide](sonarguide.md)
 
 ### Docker Setup
 
@@ -151,7 +152,7 @@ Now you can open your browser and log in to SonarQube at [http://localhost:9000]
 * Username: admin
 * Password: admin
 
-[Setting up the project guide](sonarquide.md)
+[Setting up the project guide](sonarguide.md)
 
 #### Resources
 
