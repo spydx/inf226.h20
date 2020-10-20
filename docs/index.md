@@ -21,7 +21,7 @@ The easiest way to deal with this is to install Docker on your computer.
 
 [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-You may have to create an account to use Docker.
+You may have to create an account to download Docker.
 
 [Short 100 seconds introduction to Docker](https://www.youtube.com/watch?v=Gjnup-PuquQ)
 
