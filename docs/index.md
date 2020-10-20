@@ -11,7 +11,7 @@
 * Use the [docker-compose file](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1)
 * Create a project in SonarQube
 * Analyse
-* Use [SonarLint](https://www.sonarlint.org/)
+* [SonarLint](https://www.sonarlint.org/)
 * [Setting up the project guide](sonarguide.md)
 
 ### Docker Setup
