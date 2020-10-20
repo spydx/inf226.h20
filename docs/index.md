@@ -7,12 +7,11 @@
 
 ## TL;DR
 
-Install [Docker](https://www.docker.com/products/docker-desktop)
-Use the [docker-compose](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1) file
-Create a project in SonarQube
-Analyse
-Use [SonarLint](https://www.sonarlint.org/)
-
+* Install [Docker](https://www.docker.com/products/docker-desktop)
+* Use the [docker-compose file](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1)
+* Create a project in SonarQube
+* Analyse
+* Use [SonarLint](https://www.sonarlint.org/)
 
 ### Docker Setup
 
@@ -31,6 +30,7 @@ There are many ways of using Docker so it's easy to get lost in what is happenin
 Håkon has supplied a `docker-compose.yml` file at [MittUiB](https://mitt.uib.no/courses/24957/files/2835955/download?download_frd=1)
 
 When you download this file and place it in a folder.
+
 You have to start __sonarqube__ from this folder everytime.
 
 With `docker-compose` we use the command `docker-compose up` to start the service.
@@ -71,7 +71,7 @@ Removing network docker-example_default
 kenneth@kefo ~/inf226.h20/docker-example > 
 ```
 
-You are now ready to use SonarQube
+You are now ready to use SonarQube (last section)
 
 
 ### Using Docker Hub
@@ -99,12 +99,16 @@ kenneth@kefo ~/inf226.h20 >
 
 This part is only done once, you will get error messages if you do it several times.
 
-`--name` is something we give it, I've named mine *sonarqube-inf226*, you can name yours anything.
+`--name` is something we give it.
 
-```
+ I've named mine *sonarqube-inf226*, you can name yours anything.
+
+```sh
 docker run -d --name sonarqube-inf226 -p 9000:9000 sonarqube:latest
 ```
+
 When this command is done, the service is already running.
+
 You can then check it with `docker ps`.
 
 After this use the routines described in the next section.
@@ -113,12 +117,13 @@ After this use the routines described in the next section.
 
 We can now start and stop with the following commands:
 
-`docker start nameyougaveit` to start sonarqube
-`docker ps` to check what is running on the system
-`docker stop nameyougaveit` to stop sonarqube
+* `docker start nameyougaveit` to start sonarqube
+* `docker ps` to check what is running on the system
+* `docker stop nameyougaveit` to stop sonarqube
 
 __Example__:
-```docker
+
+```sh
 kenneth@kefo ~/inf226.h20 > docker start sonarqube-inf226 
 sonarqube-inf226
 
@@ -143,8 +148,8 @@ When you have SonarQube up, you can login using the following details:
 
 Now you can open your browser and log in to SonarQube at [http://localhost:9000](http://localhost:9000)
 
-Username: admin
-Password: admin
+* Username: admin
+* Password: admin
 
 [Setting up the project guide](sonarquide.md)
 
