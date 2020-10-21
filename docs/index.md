@@ -155,6 +155,20 @@ Now you can open your browser and log in to SonarQube at [http://localhost:9000]
 
 [Setting up the project guide](sonarguide.md)
 
+### Known issues
+
+Docker is making your computer slow.
+
+Make sure that you ajust the Docker settings for your computer.
+If you have limited memory on your computer, try reducing the memory Docker can consume.
+
+You can do this through:
+
+Docker Desktop -> Preferences -> Resources.
+
+![DockerResources](img/dockerres.png)
+
+
 #### Resources
 
 * [SonarLint](https://www.sonarlint.org/)
