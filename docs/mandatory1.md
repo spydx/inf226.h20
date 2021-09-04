@@ -49,6 +49,13 @@ docker start -i inf226
 
 There are probalbly many limitations to this or issues, but I managed to run, and use GDB to analyse binaries this way.
 
+Clean up after you are done with the mandatory, either delete in gui or
+
+```sh
+$ docker stop inf226
+$ docker image rm inf226
+$ docker container rm inf226
+```
 
 ## Tools
 
