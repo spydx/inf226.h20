@@ -28,6 +28,7 @@ When you have installed WSL you can access the Windows Subsystem for Linux this 
 ```cmd
 PS> wsl
 ```
+
 ### macOS
 
 There is a solution to run linux tools, binaries and pwntools through Docker on macOs. (no need for VM)
@@ -38,7 +39,7 @@ There is a solution to run linux tools, binaries and pwntools through Docker on 
 
 ```sh
 docker pull spydx/inf226:latest
-docker run -v /:/mnt -w /mnt/$(pwd) -it --name inf226 inf226/pwntools
+docker run -v /Users:/mnt/Users/ -w /mnt/Users/ -it --name inf226 spydx/inf226:latest
 ```
 
 To run after first time
@@ -65,6 +66,7 @@ Some places it is mentioned that you need to install binutils.
 If your distrubution doesn't have that, this means that gdb, gcc, objdump is not preinstalled. Some Linux distros come without, my Ubuntu install they are preinstalled.
 
 To install binutils:
+
 ```sh
 >sudo apt-cache update
 >sudo apt-get install binutils
@@ -114,7 +116,7 @@ p = gdb.debug('./1')
 # p = process('./1')
 # To connect to the remote instead, uncomment this and comment above
 # initialization of p:
-# p = remote('oblig1.softwaresecurity.no', 9001)
+# p = remote('ctf21.softwaresecurity.no', 9001)
 # Send some line of input to the process
 p.sendline(b'Someinput')
 # Read from the process until "get past me" is displayed
@@ -134,9 +136,10 @@ You'll ned to add `context.terminal = ["tmux", "splitw", "-h"]` before you initi
 from pwn import *
 p = gdb.debug(<binary_name_as_string>, <gdb_commands_to_exec_automatically_as_string>)
 ```
+
 [PwnTools: GDB](https://docs.pwntools.com/en/stable/gdb.html)
 
-#### macOS
+#### macOS notes
 
 You will not be able to use gdb or similar tools to run the binaries on macOS
 
@@ -165,6 +168,7 @@ $ sudo apt-get install gdb
 ```
 
 #### Useful commands
+
 ```sh
 info func # list all functions
 run # runs main
@@ -185,6 +189,7 @@ gdb > br symbol
 ```
 
 Common issue is missing execute rights on the binary.
+
 ```sh
 > ./<filename>
 Error Access denied
@@ -201,7 +206,6 @@ Check for `+x` and solve it this way.
 -rw-rw---x <filename> # now you should be able to run it
 ```
 
-
 ### `xxd`
 
 [xxd manual](http://manpages.ubuntu.com/manpages/precise/man1/xxd.1.html)
@@ -213,6 +217,7 @@ Create a dissasembly output of the program
 ```sh
 objdump -d > file.txt
 ```
+
 ### `checksec`
 
 `checksec` is used to check what security settings are available.
@@ -220,14 +225,10 @@ objdump -d > file.txt
 [GitHub for `checksec`](https://github.com/slimm609/checksec.sh)
 
 ### Other fancy and maybe useful resources
-- [CTF Intro to C](https://ctf101.org/reverse-engineering/what-is-c/)
 
-- [CTF Binary Exploitation](https://ctf101.org/binary-exploitation/overview/)
-
-- [Buffer Overflows](https://ctf101.org/binary-exploitation/buffer-overflow/)
-
-- [Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
-
-- [Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
-
-- [Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
+* [CTF Intro to C](https://ctf101.org/reverse-engineering/what-is-c/)
+* [CTF Binary Exploitation](https://ctf101.org/binary-exploitation/overview/)
+* [Buffer Overflows](https://ctf101.org/binary-exploitation/buffer-overflow/)
+* [Return Oriented Programming](https://ctf101.org/binary-exploitation/return-oriented-programming/)
+* [Bypassing Stack Canaries](https://ctf101.org/binary-exploitation/stack-canaries/)
+* [Convert Unicode to Bytes](https://onlineunicodetools.com/convert-unicode-to-bytes)
