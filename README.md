@@ -6,7 +6,6 @@ Supporting material for the subject INF226 (Software Security@UiB) published on 
 
 Kenneth
 
-
 ## References
 
 [INF226 Course description](https://www.uib.no/en/course/INF226)

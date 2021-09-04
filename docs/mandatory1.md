@@ -43,6 +43,7 @@ docker run -v /Users:/mnt/Users/ -w /mnt/Users/ -it --name inf226 spydx/inf226:l
 ```
 
 To run after first time
+
 ```sh
 docker start -i inf226
 ```
